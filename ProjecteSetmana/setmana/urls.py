@@ -1,7 +1,9 @@
-from django.urls import path
+from django.urls import path, register_converter
 from . import views
+from .converters import NegativeIntConverter
+register_converter(NegativeIntConverter, 'negint')
 
 urlpatterns = [
     path('', views.home, name='home'),
-    path('<int:day>/', views.dia, name='dia'),
+    path('<negint:day>/', views.dia, name='dia'),
 ]
