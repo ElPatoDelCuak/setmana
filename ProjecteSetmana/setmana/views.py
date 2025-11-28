@@ -32,6 +32,6 @@ def dia(request, day: int):
     try:
         nombre = dias[day]
     except KeyError:
-        raise Http404('Dia no valid')
+        raise Http404('Dia no valid, introdueix un nombre entre 1 i 7, o 0 y negatius per tornar a la pàgina principal.')
 
     return render(request, 'setmana/dies.html', {'day': day, 'day_name': nombre , 'image_url': img[day]})
