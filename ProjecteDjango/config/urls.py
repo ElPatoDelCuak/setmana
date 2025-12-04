@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     path('setmana/', include('setmana.urls')),
+    path('templates/', include('templates.url'))
 ]
