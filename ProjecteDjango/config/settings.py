@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'setmana',
+    'P2_templates',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +57,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'setmana', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'setmana', 'templates'), os.path.join(BASE_DIR, 'P2_templates', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [

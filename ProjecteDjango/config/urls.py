@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from P2_templates.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-
     path('setmana/', include('setmana.urls')),
-    path('templates/', include('templates.url'))
+    path('P2_templates/', include('P2_templates.urls'))
 ]
