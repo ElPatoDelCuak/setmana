@@ -1,27 +1,35 @@
-from django.shortcuts import render, redirect
-from django.http import Http404
+from django.shortcuts import render
+
+
+personatges = {
+    "Jhonny_Silverhand": {
+        "Nom" : "Jhonny Silverhand",
+        "Frase" : "Never fade away",
+        "img" : "/static/jhonny.png"
+    },
+    "John_Hammond": {
+        "Nom" : "John Hammond",
+        "Frase" : "Welcome to Jurassic Park",
+        "img" : "/static/hammond.png"
+    },
+    "Obi_Wan_Kenobi": {
+        "Nom" : "Obi-Wan Kenobi",
+        "Frase" : "May the Force be with you",
+        "img" : "/static/obiwan.png"
+    },
+    "Arthur_Morgan": {
+        "Nom" : "Arthur Morgan",
+        "Frase" : "We are thieves in a world that don't want us no more",
+        "img" : "/static/arthur.png"
+    },
+    "Lara_Croft" : {
+        "Nom" : "Lara Croft",
+        "Frase" : "Adventure is out there",
+        "img" : "/static/lara.png"
+    }
+}
 
 def home(request):
-    return render(request, "P2_templates/home.html")
-
-
-def personatge(request, personatge):
-    if personatge == "home":
-        return redirect('home')
-
-    personatges = {
-        1: 'dilluns',
-        2: 'dimarts',
-        3: 'dimecres',
-        4: 'dijous',
-        5: 'divendres',
-        6: 'dissabte',
-        7: 'diumenge',
-    }
-
-    try:
-        nom = personatges[personatge]
-    except KeyError:
-        raise Http404('Dia no valid, introdueix un nombre entre 1 i 7, o 0 y negatius per tornar a la pàgina principal.')
-
-    return render(request, 'P2_templates/personatges.html', {'personatge': personatge, 'personatge_nom': nom , 'image_url': personatges[personatge]})
+    """Home con mensaje."""
+    var = "Hola Proba"
+    return render(request, "P2_templates/home.html", {"var": var})
